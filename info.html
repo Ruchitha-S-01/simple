@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Starter Page</title>
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --primary: #2563eb;
+      --primary-weak: #e6efff;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
+    .brand { font-weight: 700; padding: 14px 0; }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 12px;
+      text-decoration: none;
+      color: var(--muted);
+      border-radius: 8px;
+    }
+    nav a:hover { background: var(--primary-weak); color: var(--primary); }
+
+    .hero {
+      padding: 48px 0;
+    }
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+    }
+    .hero h1 { margin: 0 0 8px 0; font-size: 32px; }
+    .hero p { margin: 0 0 16px 0; color: var(--muted); }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      min-height: 120px;
+    }
+
+    .section-title { margin: 32px 0 8px; font-size: 22px; }
+    .muted { color: var(--muted); }
+
+    table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    th, td { padding: 12px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { background: #fafafa; }
+
+    form { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+    label { display: block; margin: 12px 0 6px; font-weight: 600; }
+    input, textarea, select { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 10px; }
+
+    footer {
+      margin-top: 48px;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero-card { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container row">
+      <div class="brand">My Simple Site</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#table">Table</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-card">
+        <div>
+          <h1>Clean Starter Template</h1>
+          <p>This is a minimal HTML page with lightweight CSS and a tiny bit of JavaScript. It includes a grid, a table, and a contact form to help you get started quickly.</p>
+          <button class="btn" id="cta">Click Me</button>
+        </div>
+        <div>
+          <ul class="muted">
+            <li>No frameworks required</li>
+            <li>Responsive grid & cards</li>
+            <li>Accessible HTML elements</li>
+            <li>Simple and tidy styles</li>
+            <li>100+ lines for your requirement</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="section-title">Features</h2>
+      <p class="muted">A few example cards showing how the grid works.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Fast</h3>
+          <p>Small CSS and no dependencies make this page fast to load.</p>
+        </article>
+        <article class="card">
+          <h3>Responsive</h3>
+          <p>The layout adapts to small screens using a simple media query.</p>
+        </article>
+        <article class="card">
+          <h3>Accessible</h3>
+          <p>Semantic HTML elements improve readability and accessibility.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="table">
+      <h2 class="section-title">Sample Data Table</h2>
+      <p class="muted">A tiny table with headers, rows, and borders.</p>
+      <div style="overflow-x:auto;">
+        <table aria-label="Example table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Alpha</td>
+              <td>Active</td>
+              <td>First record in the list.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Beta</td>
+              <td>Pending</td>
+              <td>Waiting for review.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Gamma</td>
+              <td>Inactive</td>
+              <td>Archived for later.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact Form</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic">
+          <option>General</option>
+          <option>Support</option>
+          <option>Feedback</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write something..."></textarea>
+
+        <div style="margin-top:12px; display:flex; gap: 8px; align-items:center;">
+          <button class="btn" type="submit">Send</button>
+          <span id="status" class="muted" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Made with plain HTML, CSS, and JS. © <span id="year"></span></div>
+  </footer>
+
+  <script>
+    // Simple JS to show interactions
+    const cta = document.getElementById('cta');
+    const year = document.getElementById('year');
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('status');
+
+    year.textContent = new Date().getFullYear();
+
+    cta.addEventListener('click', () => {
+      alert('Thanks for checking the demo!');
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      // pretend to send
+      statusEl.textContent = 'Sending...';
+      setTimeout(() => {
+        statusEl.textContent = `Sent! Thanks, ${data.name || 'friend'}.`;
+        form.reset();
+      }, 700);
+    });
+  </script>
+</body>
+</html>
